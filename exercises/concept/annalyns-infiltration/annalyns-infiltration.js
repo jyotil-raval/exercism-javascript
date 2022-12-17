@@ -1,3 +1,4 @@
+
 // @ts-check
 //
 // ☝🏽 The line above enables type checking for this file. Various IDEs interpret
@@ -5,7 +6,6 @@
 // and supported IDEs when implementing this exercise. You don't need to
 // understand types, JSDoc, or TypeScript in order to complete this JavaScript
 // exercise, and can completely ignore this comment block and directive.
-
 // 👋🏽 Hi again!
 //
 // A quick reminder about exercise stubs:
@@ -18,7 +18,6 @@
 // in idiomatic JavaScript, but some companies and style-guides do enforce them.
 //
 // Now help Annalyn free her best friend!
-
 /**
  * The fast attack is available when the knight is sleeping
  *
@@ -27,9 +26,8 @@
  * @return {boolean} Whether or not you can execute a fast attack.
  */
 export function canExecuteFastAttack(knightIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  return !knightIsAwake;
 }
-
 /**
  * A useful spy captures information, which they can't do if everyone's asleep.
  *
@@ -40,9 +38,8 @@ export function canExecuteFastAttack(knightIsAwake) {
  * @returns {boolean} Whether or not you can spy on someone.
  */
 export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  return knightIsAwake || archerIsAwake || prisonerIsAwake;
 }
-
 /**
  * You'll get caught by the archer if you signal while they're awake.
  *
@@ -52,9 +49,9 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  throw new Error('Remove this line and implement the function');
+  // throw new Error('Remove this line and implement the function');
+  return !archerIsAwake && prisonerIsAwake
 }
-
 /**
  * The final stage in the plan: freeing Annalyn's best friend.
  *
@@ -65,11 +62,13 @@ export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
  *
  * @returns {boolean} Whether or not you can free Annalyn's friend.
  */
-export function canFreePrisoner(
+export function canFreePrisoner( 
   knightIsAwake,
   archerIsAwake,
   prisonerIsAwake,
   petDogIsPresent
-) {
-  throw new Error('Remove this line and implement the function');
+ ) {
+  return( (prisonerIsAwake&& !knightIsAwake && !archerIsAwake)   
+  || (!archerIsAwake && petDogIsPresent)
+  )
 }
